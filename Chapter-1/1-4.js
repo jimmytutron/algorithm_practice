@@ -6,27 +6,32 @@
 //Example - "Tact Coa" permutation is "Taco Cat" which is a palindrome
 
 function checkPalindrome(string){
-    //remove white space and lowercase the string
-    newString = string.toLowerCase().replace(/ /g,'');
-    //sort the string alphabetically
-    var sortedString = newString.split('').sort().join('');
-    count = 0;
-    //check if the string is even or odd
-    if (sortedString.length % 2 === 0){
-        //if the string is even each character should appear twice
-        for (var i = 0; i < sortedString.length; i + 2){
-            if (sortedString[i] !== sortedString[i+1]){
-                return console.log(newString + " is not a palindrome")
-            }
-        }
-    } else {
-    for (var i = 0; i < sortedString.length; i + 2){
-            if (sortedString[i] !== sortedString[i+1]){
-                return console.log(newString + " is not a palindrome")
-            }
-        }
+//create an empty object
+var obj = {};
+//iterate through the string
+for (var i = 0; i < string.length; i++){
+    var current = string[i];
+    if (obj[current]){
+        obj[current] = obj[current]+1;
     }
-    return console.log(newString + " is a palindrome")
+    else {
+        obj[current] = 0;
+    }
 }
 
-checkPalindrome('aa');
+var odd = false;
+var letters = Object.keys(obj)
+
+for (var j = 0; j < letters.length; j++){
+    var evenCheck = (letters[i] % 2) === 0;
+    if (!evenCheck && odd){
+        return true;
+    }
+    else if (!evenCheck && !odd){
+        odd = true;
+    }
+}
+return true;
+
+}
+
