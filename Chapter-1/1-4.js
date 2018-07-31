@@ -11,6 +11,7 @@ var obj = {};
 //iterate through the string
 for (var i = 0; i < string.length; i++){
     var current = string[i];
+//store counts of letters in object
     if (obj[current]){
         obj[current] = obj[current]+1;
     }
