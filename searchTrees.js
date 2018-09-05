@@ -63,8 +63,8 @@ class BinarySearchTree {
         this.base.left = null;
     }
     insert(value){
-        current = this.base;
-        inserted = false;
+        let current = this.base;
+        let inserted = false;
 
         while(!inserted){
             if (value < current.value){
@@ -86,6 +86,18 @@ class BinarySearchTree {
                 }
             }
         }
+    }
+    find(value){
+        let current = this.base;
+        while (current && current.value !== value){
+            if (value < current.value){
+                current = current.left;
+            }
+            else {
+                current = current.right;
+            }
+        }
+        return current;
     }
     balance(){
         array = toArray(this.base);
@@ -113,9 +125,9 @@ function arrayToTree(array){
         return null;
     }
 
-    centerIndex = Math.floor(array.length/2);
-    leftArray = array.slice(0,centerIndex);
-    rightArray = array.slice(centerIndex + 1);
+    let centerIndex = Math.floor(array.length/2);
+    let leftArray = array.slice(0,centerIndex);
+    let rightArray = array.slice(centerIndex + 1);
     
     node = new Node(array[centerIndex])
 
