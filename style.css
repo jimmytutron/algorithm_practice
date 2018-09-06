@@ -1,0 +1,90 @@
+a#my-link { // 1001
+    color: red;
+}
+
+.link.link2 { // 200
+    color: blue;
+}
+
+#my-link.link2 { // 1100
+    color: purple;
+}
+
+#my-link { // 1000
+    color: green;
+}
+
+#my-link { // 1000
+    color: yellow;
+}
+
+a[data-something=hi] { // 11
+
+}
+
+a:hover { // 101
+
+}
+
+<a class="link link2" href="#" id="my-link" style="color: blue;">Link</a>
+<a data-something="hi">a</a>
+
+
+CSS SPECIFICITY
+-- calculation
+
+important: 2378123812323 points
+inline css: 1000 points
+id attributes: 100 points
+class, attributes: 10 points
+tags: 1 point
+
+
+
+
+--
+
+.container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+<div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+    <></>
+</div>
+
+
+--
+
+document.querySelector('body .my-div .my-link');
+
+<div class="my-div">
+    <a class="my-div-link"></a>
+</div>
+
+.my-div {
+    a {
+        color: red;
+    }
+}
+
+* { box-sizing: border-box; }
+
+
+
+<div class='my-div'></div>
+
+width: 1000px;
+padding: 30px;

@@ -1,2 +1,3 @@
-# algorithm_practice
-Cracking the Coding Interview; algorithm practice
+# algorithm practice
+
+Cracking the Coding Interview and other algorithm practice
